@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#151c25</color>
+    <color name="colorPrimaryDark">#151c25</color>
+    <color name="colorAccent">#f1b814</color>
+    <color name="colorOnAccent">#33f1b814</color>
+    <color name="colorOnPrimary">#33151c25</color>
+    <color name="colorBlack">#221f1f</color>
+    <color name="colorDark">#33000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorRed">#E50914</color>
+    <color name="progress_grey">#363b46</color>
+    <color name="progress_blue">#2256ca</color>
+    <color name="progress_pink">#fa35a4</color>
+    <color name="progress_shadow">@color/colorPrimary</color>
+
+    <color name="player_bg_start">#21252f</color>
+    <color name="player_bg_end">#0e1015</color>
+    <color name="player_wave">#07090d</color>
+
+    <color name="light_grey">#a0a6b6</color>
+    <color name="text_light_blue">#566f9a</color>
+
+    <color name="transparent">#00000000</color>
+</resources>

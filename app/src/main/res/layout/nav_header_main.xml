@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:gravity="bottom"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:background="@color/colorDark"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardProfilePicture"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            app:cardCornerRadius="40dp"
+            app:cardElevation="8dp"
+            android:layout_gravity="center"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_baseline_home_24"
+                />
+        </androidx.cardview.widget.CardView>
+        <!-- <ImageView
+             android:layout_marginTop="10dp"
+             android:layout_width="80dp"
+             android:layout_height="80dp"
+             android:scaleType="fitXY"/>-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/want_to_advertisement"
+            android:textColor="?attr/colorAccent"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/contact_09795014119"
+            android:textColor="?attr/colorAccent"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+    </LinearLayout>
+    <View
+        android:id="@+id/bottom_rounded_view"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        style="@style/TransparentView"
+        android:background="@drawable/round_top_background"
+        />
+</LinearLayout>

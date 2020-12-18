@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:id="@+id/nav_home_group"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="@string/home"
+            android:icon="@drawable/ic_baseline_home_24"
+            />
+    </group>
+    <group android:id="@+id/nav_home_group1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_movie"
+            android:title="@string/movie"
+            android:icon="@drawable/ic_cinema"/>
+    </group>
+    <group android:id="@+id/nav_home_group2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_series"
+            android:title="@string/series"
+            android:icon="@drawable/ic_baseline_movie_24"/>
+    </group>
+
+
+</menu>
