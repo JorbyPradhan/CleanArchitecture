@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-        networkConnectivity = NetworkConnectivity(application)
+      ///  networkConnectivity = NetworkConnectivity(application)
 
         gender = intent.getStringExtra("gender").toString()
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
@@ -48,15 +48,15 @@ class MainActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(setOf(
             R.id.nav_home, R.id.nav_movie, R.id.nav_series), drawerLayout)
-        // setupActionBarWithNavController(navController, appBarConfiguration)
+        setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-        networkConnectivity.observe(this, Observer { isAvailable->
+      /*  networkConnectivity.observe(this, Observer { isAvailable->
             when (isAvailable){
                 false -> toolbar.title = "No Internet Available"
                 true -> setupActionBarWithNavController(navController, appBarConfiguration)
             }
 
-        })
+        })*/
     }
     override fun onSupportNavigateUp(): Boolean {
         //navController = findNavController(R.id.nav_host_fragment)
