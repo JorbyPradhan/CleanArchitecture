@@ -24,6 +24,14 @@
             android:title="@string/series"
             android:icon="@drawable/ic_baseline_movie_24"/>
     </group>
+    <group android:id="@+id/nav_home_group3"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_18"
+            android:title="@string/_18"
+            android:icon="@drawable/ic_baseline_movie_24"/>
+    </group>
+
 
 
 </menu>

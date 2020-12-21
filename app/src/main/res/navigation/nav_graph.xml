@@ -15,26 +15,37 @@
             app:destination="@id/detailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/nav_movie"
+        android:id="@+id/nav_movie1"
         android:name="com.example.cleanarchitecturemovieapi.presentation.ui.movie.MovieFragment"
         android:label="Movie"
         tools:layout="@layout/movie_fragment" >
-        <action
-            android:id="@+id/action_nav_movie_to_detailFragment"
-            app:destination="@id/detailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/nav_series"
+        android:id="@+id/nav_series_1"
         android:name="com.example.cleanarchitecturemovieapi.presentation.ui.series.SeriesFragment"
         android:label="Series"
-        tools:layout="@layout/series_fragment" >
-        <action
-            android:id="@+id/action_nav_series_to_detailFragment"
-            app:destination="@id/detailFragment" />
-    </fragment>
+        tools:layout="@layout/series_fragment" />
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.cleanarchitecturemovieapi.presentation.ui.detail.DetailFragment"
         android:label="Details"
         tools:layout="@layout/detail_fragment" />
+    <fragment
+        android:id="@+id/nav_series"
+        android:name="com.example.cleanarchitecturemovieapi.presentation.ui.seriestab.TabSeriesFragment"
+        android:label="@string/series"
+        tools:layout="@layout/fragment_tab_series" >
+        <action
+            android:id="@+id/action_nav_series_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_movie"
+        android:name="com.example.cleanarchitecturemovieapi.presentation.ui.movietab.MovieTabFragment"
+        android:label="@string/movie"
+        tools:layout="@layout/fragment_movie_tab" >
+    <action
+        android:id="@+id/action_nav_movie_to_detailFragment"
+        app:destination="@id/detailFragment" />
+    </fragment>
 </navigation>

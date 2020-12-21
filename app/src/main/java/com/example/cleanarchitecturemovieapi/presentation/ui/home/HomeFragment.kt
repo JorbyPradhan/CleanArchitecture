@@ -70,11 +70,17 @@ class HomeFragment : Fragment(),KodeinAware {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
             adapter = mAdapter
         }
+        rec_series.apply {
+            setHasFixedSize(true)
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
+            adapter = mAdapter
+        }
         mAdapter.setOnItemClickListener { item, view ->
             //  val navController = Navigation.findNavController(view)
             navController = Navigation.findNavController(view)
             val movies = item as HomeAdapter
             val bundle = Bundle().also {
+                it.putInt("watch_down", 1)
                 it.putString("Title",movies.movie.title)
                 it.putString("Poster",movies.movie.backdropPath)
                 it.putDouble("rating",movies.movie.voteAverage)

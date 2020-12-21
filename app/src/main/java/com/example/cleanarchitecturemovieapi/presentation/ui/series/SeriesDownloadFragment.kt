@@ -1,5 +1,6 @@
 package com.example.cleanarchitecturemovieapi.presentation.ui.series
 
+import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -15,21 +16,20 @@ import com.example.cleanarchitecturemovieapi.presentation.ui.movie.MovieViewMode
 import com.example.data.model.Movie
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
+import kotlinx.android.synthetic.main.series_download_fragment.*
 import kotlinx.android.synthetic.main.series_fragment.*
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.kodein
 import org.kodein.di.generic.instance
 
-class SeriesFragment : Fragment(),KodeinAware {
-
+class SeriesDownloadFragment : Fragment(),KodeinAware {
     override val kodein by kodein()
-
     companion object {
-        fun newInstance() = SeriesFragment()
+        fun newInstance() = SeriesDownloadFragment()
     }
 
     private val factory: MovieViewModelFactory by instance()
-    private lateinit var viewModel: SeriesViewModel
+    private lateinit var viewModel: SeriesDownloadViewModel
     private lateinit var viewModel1: MovieViewModel
     private lateinit var navController : NavController
 
@@ -37,7 +37,7 @@ class SeriesFragment : Fragment(),KodeinAware {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.series_fragment, container, false)
+        return inflater.inflate(R.layout.series_download_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -46,8 +46,8 @@ class SeriesFragment : Fragment(),KodeinAware {
         viewModel1.getMovie()
         viewModel1.responseLiveData.observe(viewLifecycleOwner, {
             initRecyclerView(it.toMovieAdapter())
-            progress_series.visibility = View.GONE
-            rec_series.visibility = View.VISIBLE
+            progress_down_series.visibility = View.GONE
+            rec_down_series.visibility = View.VISIBLE
         })
     }
 
@@ -55,7 +55,7 @@ class SeriesFragment : Fragment(),KodeinAware {
         val movieAdapter =  GroupAdapter<GroupieViewHolder>().apply {
             addAll(toMovieAdapter)
         }
-        rec_series.apply {
+        rec_down_series.apply {
             setHasFixedSize(true)
             adapter = movieAdapter
         }
@@ -64,7 +64,7 @@ class SeriesFragment : Fragment(),KodeinAware {
             val movies = item as MovieAdapter
             val bundle = Bundle().also {
                 it.putInt("_id", 0)
-                it.putInt("watch_down", 1)
+                it.putInt("watch_down", 0)
                 it.putString("Title",movies.movie.title)
                 it.putString("Poster",movies.movie.posterPath)
                 it.putDouble("rating",movies.movie.voteAverage)
@@ -73,7 +73,7 @@ class SeriesFragment : Fragment(),KodeinAware {
                 it.putBoolean("adult",movies.movie.adult)
                 it.putString("trailer",movies.movie.trailer)
             }
-             navController.navigate(R.id.action_nav_series_to_detailFragment,bundle)
+            navController.navigate(R.id.action_nav_series_to_detailFragment,bundle)
         }
     }
 

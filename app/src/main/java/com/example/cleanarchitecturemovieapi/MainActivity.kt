@@ -12,26 +12,35 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.util.NetworkConnectivity
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.app_bar_main.*
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var navController: NavController
     private lateinit var networkConnectivity : NetworkConnectivity
+    private lateinit var gender : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         networkConnectivity = NetworkConnectivity(application)
 
-
+        gender = intent.getStringExtra("gender").toString()
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
+        val navMenu = navView.menu
+        navMenu.findItem(R.id.nav_18).isVisible = gender == "male"
 
+        MobileAds.initialize(this) {}
+
+        val adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
 
 
         navController = findNavController(R.id.nav_host_fragment)

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.ui.movietab.MovieTabFragment">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_movie_Layout"
+        app:tabIndicatorColor="@color/colorAccent"
+        app:tabInlineLabel="false"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/colorAccent"
+        app:tabTextColor="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorOnPrimary"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewMoviePager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_movieTab"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <View
+        android:id="@+id/view_movieTab"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_below="@id/tab_movie_Layout"
+        android:layout_marginTop="3dp"
+        android:background="@color/colorOnAccent" />
+</RelativeLayout>

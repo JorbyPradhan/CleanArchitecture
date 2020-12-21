@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".presentation.ui.seriestab.TabSeriesFragment">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorOnPrimary"
+            app:tabTextColor="@color/colorWhite"
+            app:tabSelectedTextColor="@color/colorAccent"
+            app:tabIndicatorColor="@color/colorAccent"
+            app:tabMode="fixed"
+            app:tabInlineLabel="false"
+            >
+        </com.google.android.material.tabs.TabLayout>
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/viewTab"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            tools:layout_editor_absoluteX="8dp" />
+        <View
+            android:id="@+id/viewTab"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginTop="3dp"
+            android:background="@color/colorOnAccent"
+            android:layout_below="@id/tabLayout"/>
+    </RelativeLayout>

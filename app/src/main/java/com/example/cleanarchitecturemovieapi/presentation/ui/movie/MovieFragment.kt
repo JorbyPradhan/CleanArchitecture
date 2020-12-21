@@ -61,6 +61,7 @@ class MovieFragment : Fragment(),KodeinAware {
             val movies = item as MovieAdapter
             val bundle = Bundle().also {
                 it.putInt("_id", 1)
+                it.putInt("watch_down", 1)
                 it.putString("Title",movies.movie.title)
                 it.putString("Poster",movies.movie.posterPath)
                 it.putDouble("rating",movies.movie.voteAverage)

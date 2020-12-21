@@ -9,4 +9,11 @@
     <string name="top_drama">Top Rating Drama</string>
     <string name="overview">Overview</string>
     <string name="watch_now">Watch Now</string>
+    <string name="_18">Joke</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="download">Download</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="similar_result">Similar Result</string>
 </resources>
